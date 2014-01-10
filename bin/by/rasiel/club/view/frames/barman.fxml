@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="by.rasiel.club.view.controllers.BarmanController">
+  <children>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="60.0" layoutX="0.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0">
+      <effect>
+        <InnerShadow choke="0.26190476190476186" height="5.249999999999999" offsetY="-5.0" radius="0.8124999999999998" width="0.0" />
+      </effect>
+    </Rectangle>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00665a" height="90.0" layoutX="0.0" layoutY="210.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0">
+      <effect>
+        <InnerShadow choke="0.26190476190476186" height="1.3124999999999998" offsetY="-5.0" radius="0.0" width="0.0" />
+      </effect>
+    </Rectangle>
+    <Polygon fill="DODGERBLUE" layoutX="65.0" layoutY="302.0" rotate="180.0" scaleX="0.74" scaleY="0.45" smooth="true" stroke="WHITE" strokeLineCap="SQUARE" strokeLineJoin="MITER" strokeMiterLimit="10.0" strokeType="INSIDE">
+      <points>
+        <Double fx:value="-50.0" />
+        <Double fx:value="40.0" />
+        <Double fx:value="50.0" />
+        <Double fx:value="40.0" />
+        <Double fx:value="0.0" />
+        <Double fx:value="-60.0" />
+      </points>
+    </Polygon>
+    <Polygon fill="DODGERBLUE" layoutX="159.0" layoutY="302.0" rotate="180.0" scaleX="0.74" scaleY="0.45" smooth="true" stroke="WHITE" strokeLineCap="SQUARE" strokeLineJoin="MITER" strokeMiterLimit="10.0" strokeType="INSIDE">
+      <points>
+        <Double fx:value="-50.0" />
+        <Double fx:value="40.0" />
+        <Double fx:value="50.0" />
+        <Double fx:value="40.0" />
+        <Double fx:value="0.0" />
+        <Double fx:value="-60.0" />
+      </points>
+    </Polygon>
+    <Polygon fill="DODGERBLUE" layoutX="253.0" layoutY="302.0" rotate="180.0" scaleX="0.74" scaleY="0.45" smooth="true" stroke="WHITE" strokeLineCap="SQUARE" strokeLineJoin="MITER" strokeMiterLimit="10.0" strokeType="INSIDE">
+      <points>
+        <Double fx:value="-50.0" />
+        <Double fx:value="40.0" />
+        <Double fx:value="50.0" />
+        <Double fx:value="40.0" />
+        <Double fx:value="0.0" />
+        <Double fx:value="-60.0" />
+      </points>
+    </Polygon>
+    <Polygon fill="DODGERBLUE" layoutX="347.0" layoutY="302.0" rotate="180.0" scaleX="0.74" scaleY="0.45" smooth="true" stroke="WHITE" strokeLineCap="SQUARE" strokeLineJoin="MITER" strokeMiterLimit="10.0" strokeType="INSIDE">
+      <points>
+        <Double fx:value="-50.0" />
+        <Double fx:value="40.0" />
+        <Double fx:value="50.0" />
+        <Double fx:value="40.0" />
+        <Double fx:value="0.0" />
+        <Double fx:value="-60.0" />
+      </points>
+    </Polygon>
+    <Polygon fill="DODGERBLUE" layoutX="441.0" layoutY="302.0" rotate="180.0" scaleX="0.74" scaleY="0.45" smooth="true" stroke="WHITE" strokeLineCap="SQUARE" strokeLineJoin="MITER" strokeMiterLimit="10.0" strokeType="INSIDE">
+      <points>
+        <Double fx:value="-50.0" />
+        <Double fx:value="40.0" />
+        <Double fx:value="50.0" />
+        <Double fx:value="40.0" />
+        <Double fx:value="0.0" />
+        <Double fx:value="-60.0" />
+      </points>
+    </Polygon>
+    <Polygon fill="DODGERBLUE" layoutX="535.0" layoutY="302.0" rotate="180.0" scaleX="0.74" scaleY="0.45" smooth="true" stroke="WHITE" strokeLineCap="SQUARE" strokeLineJoin="MITER" strokeMiterLimit="10.0" strokeType="INSIDE">
+      <points>
+        <Double fx:value="-50.0" />
+        <Double fx:value="40.0" />
+        <Double fx:value="50.0" />
+        <Double fx:value="40.0" />
+        <Double fx:value="0.0" />
+        <Double fx:value="-60.0" />
+      </points>
+    </Polygon>
+    <Pane layoutX="0.0" layoutY="247.0" prefHeight="45.0" prefWidth="600.0">
+      <children>
+        <Ellipse fill="DODGERBLUE" layoutX="65.0" layoutY="23.0" radiusX="37.0" radiusY="17.0" stroke="WHITE" strokeType="INSIDE" />
+        <Ellipse fill="DODGERBLUE" layoutX="159.0" layoutY="23.0" radiusX="37.0" radiusY="17.0" stroke="WHITE" strokeType="INSIDE" />
+        <Ellipse fill="DODGERBLUE" layoutX="253.0" layoutY="23.0" radiusX="37.0" radiusY="17.0" stroke="WHITE" strokeType="INSIDE" />
+        <Ellipse fill="DODGERBLUE" layoutX="347.0" layoutY="23.0" radiusX="37.0" radiusY="17.0" stroke="WHITE" strokeType="INSIDE" />
+        <Ellipse fill="DODGERBLUE" layoutX="441.0" layoutY="23.0" radiusX="37.0" radiusY="17.0" stroke="WHITE" strokeType="INSIDE" />
+        <Ellipse fill="DODGERBLUE" layoutX="535.0" layoutY="23.0" radiusX="37.0" radiusY="17.0" stroke="WHITE" strokeType="INSIDE" />
+      </children>
+    </Pane>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#006299" height="150.0" layoutX="0.0" layoutY="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0">
+      <effect>
+        <InnerShadow choke="0.4206349206349206" color="#001066" height="255.0" offsetY="-5.0" radius="127.0" width="255.0" />
+      </effect>
+    </Rectangle>
+    <Pane layoutX="216.0" layoutY="35.0" prefHeight="90.0" prefWidth="349.0">
+      <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#202020" height="10.999908447265625" layoutX="-20.0" layoutY="34.0" stroke="BLACK" strokeType="INSIDE" width="390.0">
+          <effect>
+            <Lighting specularExponent="17.460317460317462">
+              <bumpInput>
+                <Shadow />
+              </bumpInput>
+              <light>
+                <javafx.scene.effect.Light.Distant />
+              </light>
+            </Lighting>
+          </effect>
+        </Rectangle>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="10.999908447265625" layoutX="-20.0" layoutY="90.0" stroke="BLACK" strokeType="INSIDE" width="389.9999000000025">
+          <effect>
+            <Lighting>
+              <bumpInput>
+                <Shadow />
+              </bumpInput>
+              <light>
+                <javafx.scene.effect.Light.Distant />
+              </light>
+            </Lighting>
+          </effect>
+        </Rectangle>
+        <Button layoutX="1.0" layoutY="0.0" mnemonicParsing="false" onAction="#btnMahito" prefHeight="34.000099999997474" prefWidth="100.0" text="Махито" textAlignment="CENTER" textFill="BLACK" textOverrun="ELLIPSIS">
+          <effect>
+            <Lighting>
+              <bumpInput>
+                <Shadow />
+              </bumpInput>
+              <light>
+                <javafx.scene.effect.Light.Distant color="#72cc00" />
+              </light>
+            </Lighting>
+          </effect>
+          <font>
+            <Font name="System Bold" size="12.0" fx:id="x1" />
+          </font>
+        </Button>
+        <Button font="$x1" layoutX="125.0" layoutY="0.0" mnemonicParsing="false" onAction="#btnVodka" prefHeight="34.000099999997474" prefWidth="100.0" text="Водка" textAlignment="CENTER" textFill="BLACK" textOverrun="ELLIPSIS">
+          <effect>
+            <Lighting>
+              <bumpInput>
+                <Shadow />
+              </bumpInput>
+              <light>
+                <javafx.scene.effect.Light.Distant />
+              </light>
+            </Lighting>
+          </effect>
+        </Button>
+        <Button font="$x1" layoutX="249.0" layoutY="0.0" mnemonicParsing="false" onAction="#btnCola" prefHeight="34.000099999997474" prefWidth="100.0" text="Coca Cola" textAlignment="CENTER" textFill="BLACK" textOverrun="ELLIPSIS">
+          <effect>
+            <Lighting>
+              <bumpInput>
+                <Shadow />
+              </bumpInput>
+              <light>
+                <javafx.scene.effect.Light.Distant color="#ff3333" />
+              </light>
+            </Lighting>
+          </effect>
+        </Button>
+        <Button font="$x1" layoutX="1.0" layoutY="59.0" mnemonicParsing="false" onAction="#btnLimon" prefHeight="34.000099999997474" prefWidth="100.0" text="Лимон" textAlignment="CENTER" textFill="BLACK" textOverrun="ELLIPSIS">
+          <effect>
+            <Lighting>
+              <bumpInput>
+                <Shadow />
+              </bumpInput>
+              <light>
+                <javafx.scene.effect.Light.Distant color="#fff733" />
+              </light>
+            </Lighting>
+          </effect>
+        </Button>
+        <Button font="$x1" layoutX="125.0" layoutY="59.0" mnemonicParsing="false" onAction="#btnTekila" prefHeight="34.000099999997474" prefWidth="100.0" text="Текила" textAlignment="CENTER" textFill="BLACK" textOverrun="ELLIPSIS">
+          <effect>
+            <Lighting>
+              <bumpInput>
+                <Shadow />
+              </bumpInput>
+              <light>
+                <javafx.scene.effect.Light.Distant color="#ff7a00" />
+              </light>
+            </Lighting>
+          </effect>
+        </Button>
+        <Button font="$x1" layoutX="249.0" layoutY="59.0" mnemonicParsing="false" onAction="#btnLiker" prefHeight="34.000099999997474" prefWidth="100.0" text="Ликер" textAlignment="CENTER" textFill="BLACK" textOverrun="ELLIPSIS">
+          <effect>
+            <Lighting>
+              <bumpInput>
+                <Shadow />
+              </bumpInput>
+              <light>
+                <javafx.scene.effect.Light.Distant color="#00ffe0" />
+              </light>
+            </Lighting>
+          </effect>
+        </Button>
+      </children>
+    </Pane>
+    <Pane layoutX="14.0" layoutY="142.0" prefHeight="90.0" prefWidth="108.0">
+      <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd466" height="90.0" layoutX="0.0" layoutY="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="108.0">
+          <effect>
+            <InnerShadow />
+          </effect>
+        </Rectangle>
+        <VBox alignment="CENTER" layoutX="0.0" layoutY="0.0" prefHeight="90.0" prefWidth="100.0">
+          <children>
+            <Text fx:id="text1" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+              <font>
+                <Font size="11.0" fx:id="x2" />
+              </font>
+            </Text>
+            <Text fx:id="text2" font="$x2" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="text3" font="$x2" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="text4" font="$x2" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="text5" font="$x2" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+          </children>
+        </VBox>
+      </children>
+    </Pane>
+    <Pane layoutX="29.0" layoutY="15.0" prefHeight="114.00009999999747" prefWidth="153.0">
+      <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="120.0" layoutX="-1.0" layoutY="0.0" opacity="0.52" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="150.0" />
+        <Pane fx:id="glassPanel" layoutX="-1.0" layoutY="0.0" prefHeight="120.0" prefWidth="150.0">
+          <children>
+            <Rectangle fx:id="lvl1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" layoutX="0.0" layoutY="100.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="150.0" />
+            <Rectangle fx:id="lvl2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" layoutX="0.0" layoutY="80.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="150.0" />
+            <Rectangle fx:id="lvl3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" layoutX="0.0" layoutY="60.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="150.0" />
+            <Rectangle fx:id="lvl4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" layoutX="0.0" layoutY="40.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="150.0" />
+            <Rectangle fx:id="lvl5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" layoutX="0.0" layoutY="20.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="150.0" />
+          </children>
+        </Pane>
+      </children>
+    </Pane>
+  </children>
+  <stylesheets>
+    <URL value="@../style.css" />
+  </stylesheets>
+</AnchorPane>

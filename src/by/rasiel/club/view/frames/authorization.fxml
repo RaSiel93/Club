@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="147.0" prefWidth="278.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="by.rasiel.club.view.controllers.AuthorizationController">
+  <children>
+    <VBox alignment="CENTER" layoutX="35.0" layoutY="4.0" prefHeight="147.0" prefWidth="208.0">
+      <children>
+        <HBox alignment="CENTER" prefHeight="34.0" prefWidth="208.0">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Введите псевдоним">
+              <font>
+                <Font size="20.0" />
+              </font>
+            </Text>
+          </children>
+        </HBox>
+        <TextField fx:id="loginField" alignment="CENTER" editable="true" focusTraversable="true" prefHeight="34.0" prefWidth="263.0" promptText="" text="" visible="true" />
+        <HBox alignment="CENTER" prefHeight="43.0" prefWidth="208.0">
+          <children>
+            <Button mnemonicParsing="false" onAction="#handleSubmitButtonAction" text="Подтвердить">
+              <font>
+                <Font size="16.0" fx:id="x1" />
+              </font>
+            </Button>
+          </children>
+        </HBox>
+        <Text fx:id="actiontarget" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="" visible="true" />
+      </children>
+    </VBox>
+  </children>
+    <stylesheets>
+    <URL value="@../style.css" />
+  </stylesheets>
+</AnchorPane>

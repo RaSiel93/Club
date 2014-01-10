@@ -1,0 +1,13 @@
+package by.rasiel.club.view.controllers;
+
+public enum Frames {
+	AUTH_FRAME,
+	MENU_FRAME,
+	RATING_FRAME,
+	PERSON_FRAME,
+	GAME_FRAME,
+	GAME_SECURITY_FRAME,
+	GAME_OVER_FRAME,
+	GAME_WAITER_FRAME,
+	GAME_BARMAN_FRAME
+}

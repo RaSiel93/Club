@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="274.0" prefWidth="495.999977929685" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="by.rasiel.club.view.controllers.PersonController">
+  <children>
+    <BorderPane layoutX="0.0" layoutY="0.0" prefHeight="274.0" prefWidth="496.0">
+      <bottom>
+        <HBox alignment="CENTER" prefHeight="35.0" prefWidth="345.0">
+          <children>
+            <Button mnemonicParsing="false" onAction="#buttonBackToMenu" prefHeight="24.140625" prefWidth="97.0" text="Назад в меню" />
+          </children>
+        </HBox>
+      </bottom>
+      <center>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+          <children>
+            <Pane blendMode="SRC_OVER" prefHeight="200.0" prefWidth="200.0" style="&#10;">
+              <children>
+                <VBox alignment="CENTER" layoutX="0.0" layoutY="-1.0" prefHeight="199.0" prefWidth="165.0">
+                  <children>
+                    <Button onAction="#buttonSecurity" id="preferencesButton" contentDisplay="CENTER" prefHeight="140.0" prefWidth="113.0" text="">
+                      <graphic>
+                        <ImageView fitHeight="180.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../images/security.jpg" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Охранник" />
+                  </children>
+                </VBox>
+              </children>
+            </Pane>
+            <Pane blendMode="SRC_OVER" prefHeight="200.0" prefWidth="200.0" style="&#10;">
+              <children>
+                <VBox alignment="CENTER" layoutX="-1.0" layoutY="-2.0" prefHeight="199.0" prefWidth="165.0">
+                  <children>
+                    <Button onAction="#buttonBarman" fx:id="preferencesButton" contentDisplay="CENTER" text="">
+                      <graphic>
+                        <ImageView fitHeight="180.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../images/barman.jpg" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Бармен" />
+                  </children>
+                </VBox>
+              </children>
+            </Pane>
+            <Pane blendMode="SRC_OVER" prefHeight="200.0" prefWidth="200.0" style="&#10;">
+              <children>
+                <VBox alignment="CENTER" layoutX="-1.0" layoutY="-2.0" prefHeight="199.0" prefWidth="165.0">
+                  <children>
+                    <Button onAction="#buttonWaiter" id="preferencesButton" contentDisplay="CENTER" text="">
+                      <graphic>
+                        <ImageView fitHeight="180.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../images/waiter.jpg" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Официант" />
+                  </children>
+                </VBox>
+              </children>
+            </Pane>
+          </children>
+        </HBox>
+      </center>
+      <top>
+        <HBox alignment="CENTER" prefHeight="35.0" prefWidth="383.0">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Выбор роли">
+              <font>
+                <Font size="20.0" />
+              </font>
+            </Text>
+          </children>
+        </HBox>
+      </top>
+    </BorderPane>
+  </children>
+  <stylesheets>
+    <URL value="@../style.css" />
+  </stylesheets>
+</AnchorPane>
