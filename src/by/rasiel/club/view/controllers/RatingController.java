@@ -1,14 +1,12 @@
 package by.rasiel.club.view.controllers;
 
-import java.io.Serializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import by.rasiel.club.main.Club;
-import by.rasiel.club.model.ListRating;
-import by.rasiel.club.model.Rating;
+import by.rasiel.club.model.enums.Frames;
+import by.rasiel.club.model.profile.Rating;
 import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,10 +17,8 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.text.Text;
 import javafx.util.Callback;
 
 public class RatingController implements Initializable {
@@ -33,18 +29,19 @@ public class RatingController implements Initializable {
 
 	@FXML
 	protected void buttonBackToMenu(ActionEvent event) {
-		controller.changeFrame(Frames.MENU_FRAME);
+		controller.changeFrame(Frames.MENU);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		ObservableList<Rating> data = FXCollections.observableArrayList(controller.getListRating());
 
-		TableColumn numberCol = new TableColumn("#");
+		TableColumn<Rating, Rating> numberCol = new TableColumn<Rating, Rating>("#");
         numberCol.setMinWidth(20);
         numberCol.setCellValueFactory(new Callback<CellDataFeatures<Rating, Rating>, ObservableValue<Rating>>() {
             @Override public ObservableValue<Rating> call(CellDataFeatures<Rating, Rating> p) {
-                return new ReadOnlyObjectWrapper(p.getValue());
+                return new ReadOnlyObjectWrapper<Rating>(p.getValue());
             }
         });
 
@@ -66,22 +63,15 @@ public class RatingController implements Initializable {
         numberCol.setResizable(false);
         numberCol.setSortable(false);
 		
-		TableColumn loginCol = new TableColumn("Псевдоним");
-		loginCol.setMinWidth(114);
+		TableColumn<Rating, String> loginCol = new TableColumn<Rating, String>("Псевдоним");
+		loginCol.setMinWidth(135);
 		loginCol.setCellValueFactory(new PropertyValueFactory<Rating, String>(
 				"login"));
 		loginCol.setResizable(false);
 		loginCol.setSortable(false);
 
-		TableColumn roleCol = new TableColumn("Роль");
-		roleCol.setMinWidth(80);
-		roleCol.setCellValueFactory(new PropertyValueFactory<Rating, String>(
-				"role"));
-		roleCol.setResizable(false);
-		roleCol.setSortable(false);
-
-		TableColumn<Rating, Integer> scoreCol = new TableColumn("Игровые очки");
-		scoreCol.setMinWidth(90);
+		TableColumn<Rating, Integer> scoreCol = new TableColumn<Rating, Integer>("Набранные очки");
+		scoreCol.setMinWidth(135);
 		scoreCol.setCellValueFactory(new PropertyValueFactory<Rating, Integer>(
 				"score"));
 		scoreCol.setResizable(false);
@@ -89,7 +79,7 @@ public class RatingController implements Initializable {
 
 		TableView<Rating> table = new TableView<Rating>();
 		table.setItems(data);
-		table.getColumns().addAll(numberCol, loginCol, roleCol, scoreCol);
+		table.getColumns().addAll(numberCol, loginCol, scoreCol);
 		
 		bp.setCenter(table);
 	}

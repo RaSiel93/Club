@@ -1,6 +1,7 @@
 package by.rasiel.club.view.controllers;
 
 import by.rasiel.club.main.Club;
+import by.rasiel.club.model.enums.Frames;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -20,7 +21,8 @@ public class AuthorizationController {
 		String login;
 		if ((login = loginField.getText()).length() > 0) {
 			controller.setLogin(login);
-			controller.changeFrame(Frames.MENU_FRAME);
+			controller.addProfile(login);
+			controller.changeFrame(Frames.MENU);
 		} else {
 			actiontarget.setText("Вы не ввели псевдоним");
 		}

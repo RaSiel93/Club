@@ -1,58 +1,53 @@
 package by.rasiel.club.view.controllers;
 
-import java.io.IOException;
 import java.util.List;
 
-import by.rasiel.club.model.ListRating;
-import by.rasiel.club.model.Rating;
-import by.rasiel.club.view.models.AuthFrame;
-import by.rasiel.club.view.models.GameBarmanFrame;
-import by.rasiel.club.view.models.GameOverFrame;
-import by.rasiel.club.view.models.GameSecurityFrame;
-import by.rasiel.club.view.models.GameWaiterFrame;
-import by.rasiel.club.view.models.GeneralFrame;
-import by.rasiel.club.view.models.MenuFrame;
-import by.rasiel.club.view.models.PersonFrame;
+import by.rasiel.club.model.enums.Frames;
+import by.rasiel.club.model.enums.Roles;
+import by.rasiel.club.model.profile.ListProfile;
+import by.rasiel.club.model.profile.Rating;
+import by.rasiel.club.view.models.Authorization;
+import by.rasiel.club.view.models.GameBarman;
+import by.rasiel.club.view.models.GameFrame;
+import by.rasiel.club.view.models.GameOver;
+import by.rasiel.club.view.models.GameSecurity;
+import by.rasiel.club.view.models.GameWaiter;
+import by.rasiel.club.view.models.Menu;
+import by.rasiel.club.view.models.ChoseRole;
 import by.rasiel.club.view.models.RatingFrame;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class GeneralController {
 	private final String LOGIN_DEFAULT = "Аноним";
 
 	private Stage currentFrame;
-	private GameBarmanFrame barFrame;
 
-	private ListRating listRating;
+	private ListProfile listProfile;
 
-	private MenuFrame menuFrame;
-	private AuthFrame authFrame;
-	private PersonFrame personFrame;
+	private Menu menuFrame;
+	private Authorization authFrame;
+	private ChoseRole personFrame;
 
 	private String login = LOGIN_DEFAULT;
+
 	private Integer error;
 	private Integer done;
-	private String role;
 	private Integer score;
 
 	public GeneralController(Stage frame) {
 		currentFrame = frame;
-		listRating = new ListRating();
-		listRating.loadRating();
+		listProfile = new ListProfile();
+		listProfile.loadProfiles();
 	}
 
 	public List<Rating> getListRating() {
-		return listRating.getListRating();
+		return listProfile.getListRating();
 	}
 
 	public void initFrames() {
-		menuFrame = new MenuFrame();
-		authFrame = new AuthFrame();
-		personFrame = new PersonFrame();
+		menuFrame = new Menu();
+		authFrame = new Authorization();
+		personFrame = new ChoseRole();
 	}
 
 	public void changeFrame(Frames ratingFrame) {
@@ -60,25 +55,25 @@ public class GeneralController {
 		currentFrame = getFrame(ratingFrame);
 		currentFrame.show();
 	}
-	
+
 	private Stage getFrame(Frames choice) {
 		switch (choice) {
-		case MENU_FRAME:
+		case MENU:
 			return menuFrame;
-		case AUTH_FRAME:
+		case AUTH:
 			return authFrame;
-		case RATING_FRAME:
+		case RATING:
 			return new RatingFrame();
-		case PERSON_FRAME:
+		case PERSON:
 			return personFrame;
-		case GAME_SECURITY_FRAME:
-			return new GameSecurityFrame();
-		case GAME_OVER_FRAME:
-			return new GameOverFrame();
-		case GAME_WAITER_FRAME:
-			return new GameWaiterFrame();
-		case GAME_BARMAN_FRAME:
-			return new GameBarmanFrame();
+		case GAME_SECURITY:
+			return new GameSecurity();
+		case GAME_OVER:
+			return new GameOver();
+		case GAME_WAITER:
+			return new GameWaiter();
+		case GAME_BARMAN:
+			return new GameBarman();
 		default:
 			return null;
 		}
@@ -88,13 +83,11 @@ public class GeneralController {
 		this.login = login;
 	}
 
-	public void addRating(Integer error, Integer done, String role,
-			Integer score) {
+	public void addRating(int error, int done, Roles role, int score) {
 		this.error = error;
 		this.done = done;
-		this.role = role;
 		this.score = score;
-		listRating.addRating(new Rating(login, role, score));
+		listProfile.addScoreInProfile(login, role, score);
 	}
 
 	public Integer getError() {
@@ -105,25 +98,27 @@ public class GeneralController {
 		return done;
 	}
 
-	public String getRole() {
-		return role;
-	}
-
 	public Integer getScore() {
 		return score;
 	}
 
 	public void smallDone() {
-		((GameBarmanFrame)currentFrame).smallDone();
+		((GameFrame) currentFrame).smallDone();
 	}
+
 	public void done() {
-		((GameBarmanFrame)currentFrame).done();
+		((GameFrame) currentFrame).done();
 	}
+
 	public void error() {
-		((GameBarmanFrame)currentFrame).error();
+		((GameFrame) currentFrame).error();
 	}
 
 	public boolean isGame() {
-		return ((GameBarmanFrame)currentFrame).isGame();
+		return ((GameBarman) currentFrame).isGame();
+	}
+
+	public void addProfile(String login) {
+		listProfile.addProfile(login);
 	}
 }

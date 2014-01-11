@@ -1,38 +1,18 @@
 package by.rasiel.club.view.models;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
-import brickbreaker.Bonus;
-import brickbreaker.Config;
-import brickbreaker.Level;
 import by.rasiel.club.main.Club;
-import by.rasiel.club.view.controllers.Frames;
+import by.rasiel.club.model.enums.Frames;
+import by.rasiel.club.model.enums.Roles;
 import by.rasiel.club.view.controllers.GeneralController;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Platform;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.VPos;
 import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -42,14 +22,13 @@ import javafx.util.Duration;
 public abstract class GameFrame extends GeneralFrame {
 
 	static final String TITLE = GeneralFrame.TITLE + " - " + "»гра за ";
-
 	private static final GeneralController controller = Club.getController();
 
 	Group infoPanel;
 	Group buttonPanel;
 	Group gamePanel;
 
-	private String role;
+	private Roles role;
 
 	static Integer countError;
 	static Integer countDone;
@@ -70,7 +49,7 @@ public abstract class GameFrame extends GeneralFrame {
 
 	private Timeline timer;
 
-	public GameFrame(String title, String role) {
+	public GameFrame(String title, Roles role) {
 		super(title);
 		this.role = role;
 
@@ -186,7 +165,7 @@ public abstract class GameFrame extends GeneralFrame {
 			@Override
 			public void handle(ActionEvent e) {
 				stop();
-				controller.changeFrame(Frames.MENU_FRAME);
+				controller.changeFrame(Frames.MENU);
 			}
 		});
 	}
@@ -237,6 +216,10 @@ public abstract class GameFrame extends GeneralFrame {
 	abstract void initGamePanel();
 	abstract void startGame();
 	abstract void stopGame();
+	public abstract void done();
+	public abstract void smallDone();
+	public abstract void error();
+	
 	
 	public void start() {
 		initStats();
@@ -253,6 +236,6 @@ public abstract class GameFrame extends GeneralFrame {
 	private void gameOver() {
 		stop();
 		controller.addRating(countError, countDone, role, countScore);
-		controller.changeFrame(Frames.GAME_OVER_FRAME);
+		controller.changeFrame(Frames.GAME_OVER);
 	}
 }

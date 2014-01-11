@@ -6,87 +6,73 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import by.rasiel.club.main.Club;
-import by.rasiel.club.view.controllers.utils.Drink;
-import by.rasiel.club.view.controllers.utils.Glass;
-import by.rasiel.club.view.controllers.utils.OrderList;
-import by.rasiel.club.view.models.GameBarmanFrame;
+import by.rasiel.club.model.Glass;
+import by.rasiel.club.model.OrderList;
+import by.rasiel.club.model.enums.Drinks;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 public class BarmanController implements Initializable {
 	private static final GeneralController controller = Club.getController();
 
-	@FXML
-	private Rectangle lvl1;
-	@FXML
-	private Rectangle lvl2;
-	@FXML
-	private Rectangle lvl3;
-	@FXML
-	private Rectangle lvl4;
-	@FXML
-	private Rectangle lvl5;
+	@FXML private Rectangle lvl1;
+	@FXML private Rectangle lvl2;
+	@FXML private Rectangle lvl3;
+	@FXML private Rectangle lvl4;
+	@FXML private Rectangle lvl5;
 
-	@FXML
-	private Text text1;
-	@FXML
-	private Text text2;
-	@FXML
-	private Text text3;
-	@FXML
-	private Text text4;
-	@FXML
-	private Text text5;
+	@FXML private Text text1;
+	@FXML private Text text2;
+	@FXML private Text text3;
+	@FXML private Text text4;
+	@FXML private Text text5;
 
 	@FXML
 	protected void btnMahito(ActionEvent event) {
 		if (isGame()) {
-			addIngredient(Drink.MAHITO);
+			addIngredient(Drinks.MAHITO);
 		}
 	}
 
 	@FXML
 	protected void btnVodka(ActionEvent event) {
 		if (isGame()) {
-			addIngredient(Drink.VODKA);
+			addIngredient(Drinks.VODKA);
 		}
 	}
 
 	@FXML
 	protected void btnCola(ActionEvent event) {
 		if (isGame()) {
-			addIngredient(Drink.COLA);
+			addIngredient(Drinks.COLA);
 		}
 	}
 
 	@FXML
 	protected void btnLimon(ActionEvent event) {
 		if (isGame()) {
-			addIngredient(Drink.LIMON);
+			addIngredient(Drinks.LIMON);
 		}
 	}
 
 	@FXML
 	protected void btnTekila(ActionEvent event) {
 		if (isGame()) {
-			addIngredient(Drink.TEKILA);
+			addIngredient(Drinks.TEKILA);
 		}
 	}
 
 	@FXML
 	protected void btnLiker(ActionEvent event) {
 		if (isGame()) {
-			addIngredient(Drink.LIKER);
+			addIngredient(Drinks.LIKER);
 		}
 	}
 
-	private void addIngredient(Drink drink) {
+	private void addIngredient(Drinks drink) {
 		if (checkIngredient(drink)) {
 			glass.addIngredient(drink);
 			controller.smallDone();
@@ -106,7 +92,7 @@ public class BarmanController implements Initializable {
 		return false;
 	}
 
-	private boolean checkIngredient(Drink drink) {
+	private boolean checkIngredient(Drinks drink) {
 		if (ingredients.get(level) == drink) {
 			return true;
 		}
@@ -115,14 +101,14 @@ public class BarmanController implements Initializable {
 
 	Glass glass;
 	OrderList order;
-	List<Drink> ingredients;
+	List<Drinks> ingredients;
 	int level;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		glass = new Glass(lvl1, lvl2, lvl3, lvl4, lvl5);
 		order = new OrderList(text1, text2, text3, text4, text5);
-		ingredients = new ArrayList<Drink>();
+		ingredients = new ArrayList<Drinks>();
 		generateOrderList();
 		level = 0;
 	}
@@ -132,7 +118,7 @@ public class BarmanController implements Initializable {
 		order.clear();
 		int countIngredients = 3 + (int) (Math.random() * 3);
 		for (int i = 0; i < countIngredients; i++) {
-			ingredients.add(Drink.values()[(int) (Math.random() * 6)]);
+			ingredients.add(Drinks.values()[(int) (Math.random() * 6)]);
 		}
 		order.addIngredient(ingredients);
 	}

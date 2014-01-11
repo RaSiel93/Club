@@ -3,7 +3,6 @@ package by.rasiel.club.view.models;
 import java.io.IOException;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -12,8 +11,6 @@ public abstract class GeneralFrame extends Stage{
 	static final String PATH = "../frames/";
 	static final String TITLE = "Клуб";
 	
-	Parent node;
-
 	public GeneralFrame(){
 		setResizable(false);
 	}
@@ -23,6 +20,7 @@ public abstract class GeneralFrame extends Stage{
 	}
 	
 	public GeneralFrame(String title, String path) {
+		Parent node = null;
 		try {
 			node = FXMLLoader.load(getClass().getResource(path));
 		} catch (IOException e) {
@@ -31,6 +29,4 @@ public abstract class GeneralFrame extends Stage{
 		setTitle(title);
 		setScene(new Scene(node));
 	}
-
-	public abstract void initContent();
 }

@@ -1,12 +1,12 @@
 package by.rasiel.club.model;
 
-import by.rasiel.club.view.models.GameFrame;
-import javafx.animation.Animation;
+import by.rasiel.club.main.Club;
+import by.rasiel.club.model.enums.Hearts;
+import by.rasiel.club.view.controllers.GeneralController;
 import javafx.animation.FadeTransition;
 import javafx.animation.PathTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.Timeline;
-import javafx.animation.Transition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -22,11 +22,13 @@ import javafx.scene.shape.Shape;
 import javafx.util.Duration;
 
 public class People extends Circle {
-	private Heart heart;
+	private static final GeneralController controller = Club.getController();
+	
+	private Hearts heart;
 
 	SequentialTransition moveAnimation;
 
-	public People(double x, double y, Heart heart) {
+	public People(double x, double y, Hearts heart) {
 		super(x, y, 16);
 		this.heart = heart;
 		setFill(getColor(heart));
@@ -43,18 +45,14 @@ public class People extends Circle {
 
 			private void click() {
 				setVisible(false);
-				if (isGoodHeart()) {
-					GameFrame.setCountError(1);
-					GameFrame.setCountScore(-100);
-				} else {
-					GameFrame.setCountDone(1);
-					GameFrame.setCountScore(10);
+				if (!isGoodHeart()) {
+					controller.done();
 				}
 			}
 		});
 	}
 
-	private Paint getColor(Heart heart) {
+	private Paint getColor(Hearts heart) {
 		if (isGoodHeart()) {
 			return Color.web("1c89f4");
 		}
@@ -62,14 +60,13 @@ public class People extends Circle {
 	}
 
 	public boolean isGoodHeart() {
-		if (heart == Heart.GOOD) {
+		if (heart == Hearts.GOOD) {
 			return true;
 		}
 		return false;
 	}
 
 	public void start(int dance_width, double speed) {
-
 		TranslateTransition move = new TranslateTransition(
 				Duration.seconds(100 / speed));
 		move.setFromX(0);
@@ -79,28 +76,18 @@ public class People extends Circle {
 		fade.setFromValue(1.0f);
 		fade.setToValue(0.0f);
 
-		Animation onFinished = new Transition() {
-			{
-				setCycleDuration(Duration.millis(0.1));
-				setCycleCount(1);
-			}
-
-			protected void interpolate(double frac) {
-				finish();
+		moveAnimation = new SequentialTransition(this, move);
+		moveAnimation.setOnFinished(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent arg0) {
 				setVisible(false);
-			}
-
-			private void finish() {
 				if (isGoodHeart()) {
-					GameFrame.setCountScore(10);
+					controller.smallDone();
 				} else {
-					GameFrame.setCountError(1);
-					GameFrame.setCountScore(-30);
+					controller.error();
 				}
 			}
-		};
-
-		moveAnimation = new SequentialTransition(this, move, onFinished);
+		});
 		moveAnimation.play();
 	}
 
@@ -165,7 +152,7 @@ public class People extends Circle {
 
 		final PathTransition transition = generatePathTransition(this, path);
 		transition.setCycleCount(1);
-		transition.setOnFinished(new EventHandler<ActionEvent>(){
+		transition.setOnFinished(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent arg0) {
 				setCenterX(getCenterX() + getTranslateX());
